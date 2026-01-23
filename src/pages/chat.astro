@@ -1,0 +1,184 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Oculus AI - Chat">
+    <div class="flex h-screen overflow-hidden bg-background-light dark:bg-background-dark">
+        <!-- Sidebar -->
+        <aside class="w-[280px] flex-shrink-0 flex flex-col bg-surface-light dark:bg-[#121212] border-r border-neutral-200 dark:border-neutral-800">
+            <!-- Header -->
+            <div class="p-4">
+                <div class="flex items-center gap-3 px-2 mb-6">
+                    <img src="/logo.jpeg" alt="Oculus" class="w-8 h-8 rounded-lg">
+                    <span class="font-bold text-lg tracking-tight">Oculus</span>
+                </div>
+
+                <button class="w-full flex items-center justify-between px-3 py-2 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[20px] text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white">add</span>
+                        <span class="text-sm font-medium">New Chat</span>
+                    </div>
+                    <span class="material-symbols-outlined text-[16px] text-neutral-400">chevron_right</span>
+                </button>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="flex-1 overflow-y-auto px-4 py-2 space-y-8">
+                <!-- Conversations -->
+                <div>
+                    <h3 class="text-xs font-medium text-neutral-400 uppercase tracking-wider mb-3 px-2">Conversations</h3>
+                    <div class="space-y-0.5">
+                        <button class="w-full text-left px-2 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg truncate transition-colors">
+                            Clipboard Issue Fix
+                        </button>
+                        <button class="w-full text-left px-2 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg truncate transition-colors">
+                            Image Request Summary
+                        </button>
+                        <button class="w-full text-left px-2 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg truncate transition-colors">
+                            Delivery Update Message
+                        </button>
+                        <button class="w-full text-left px-2 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg truncate transition-colors">
+                            What makes a contract legally...
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Spaces -->
+                <div>
+                    <h3 class="text-xs font-medium text-neutral-400 uppercase tracking-wider mb-3 px-2">Spaces</h3>
+                    <div class="space-y-1">
+                        <button class="w-full flex items-center justify-between px-2 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                                General Design Tips
+                            </div>
+                            <span class="text-xs bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-1.5 py-0.5 rounded text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300">⌘1</span>
+                        </button>
+                        <button class="w-full flex items-center justify-between px-2 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                                Contracts & Business
+                            </div>
+                            <span class="text-xs bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-1.5 py-0.5 rounded text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300">⌘2</span>
+                        </button>
+                        <button class="w-full flex items-center justify-between px-2 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-pink-500"></span>
+                                Dev Space
+                            </div>
+                            <span class="text-xs bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-1.5 py-0.5 rounded text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300">⌘3</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="p-4 space-y-1">
+                <button class="w-full flex items-center gap-3 px-2 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">settings</span>
+                    Settings
+                </button>
+                <button class="w-full flex items-center gap-3 px-2 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">headset_mic</span>
+                    Support
+                </button>
+                
+                <div class="pt-3 mt-2 border-t border-neutral-200 dark:border-neutral-800">
+                    <button class="w-full flex items-center justify-between px-2 py-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors group">
+                        <div class="flex items-center gap-3">
+                            <img src="/model.jpeg" alt="User" class="w-8 h-8 rounded-full object-cover">
+                            <div class="text-left">
+                                <div class="text-sm font-medium text-neutral-900 dark:text-white">Katherine Moon <span class="text-blue-500 inline-block align-middle text-[12px] material-symbols-outlined" style="font-size: 14px;">verified</span></div>
+                                <div class="text-xs text-neutral-500 truncate max-w-[120px]">kathymoon@grvt8.com</div>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-[16px] text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col items-center justify-center relative">
+            <div class="w-full max-w-3xl px-6 flex flex-col items-center">
+                <!-- Center Logo/Icon -->
+                <div class="mb-8">
+                    <div class="w-16 h-16 bg-black dark:bg-white rounded-2xl flex items-center justify-center shadow-xl">
+                        <img src="/logo.jpeg" alt="Oculus" class="w-16 h-16 rounded-2xl opacity-90">
+                    </div>
+                </div>
+
+                <!-- Heading -->
+                <h1 class="text-4xl font-bold text-neutral-900 dark:text-white mb-3 text-center">
+                    How can I help today?
+                </h1>
+                <p class="text-neutral-500 dark:text-neutral-400 mb-10 text-center">
+                    Try out new features: Deep Search, Think, Edit Image
+                </p>
+
+                <!-- Input Box -->
+                <div class="w-full bg-white dark:bg-[#1C1C1C] rounded-[2rem] p-4 shadow-xl shadow-black/5 border border-neutral-200 dark:border-neutral-800">
+                    <div class="flex flex-col min-h-[140px] relative">
+                        <!-- Model Selector -->
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors">
+                                <img src="/model.jpeg" alt="v3" class="w-5 h-5 rounded-md">
+                                <span class="text-xs font-semibold text-neutral-600 dark:text-neutral-400">v3</span>
+                            </div>
+                        </div>
+
+                        <!-- Textarea -->
+                        <textarea class="w-full bg-transparent border-none focus:ring-0 text-lg resize-none placeholder-neutral-400 dark:placeholder-neutral-600 cursor-text outline-none" placeholder="Ask anything..."></textarea>
+                        
+                        <!-- Bottom Actions -->
+                        <div class="mt-auto flex items-center justify-between pt-2">
+                            <button class="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300">
+                                <span class="material-symbols-outlined">attach_file</span>
+                            </button>
+                            <div class="flex items-center gap-2">
+                                <button class="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300">
+                                    <span class="material-symbols-outlined">tune</span>
+                                </button>
+                                <button class="bg-black dark:bg-white text-white dark:text-black p-2 rounded-xl hover:opacity-90 transition-opacity">
+                                    <span class="material-symbols-outlined text-[20px]">send</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Pills -->
+                <div class="flex flex-wrap justify-center gap-3 mt-6">
+                    <button class="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+                        <span class="material-symbols-outlined text-[18px] text-green-500">center_focus_weak</span>
+                        Deep Search
+                    </button>
+                    <button class="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+                        <span class="material-symbols-outlined text-[18px] text-blue-500">lightbulb</span>
+                        Think
+                    </button>
+                    <button class="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+                        <span class="material-symbols-outlined text-[18px] text-orange-500">edit_square</span>
+                        Edit Image
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom Footer Info -->
+            <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-6 text-xs text-neutral-400">
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[14px]">schedule</span>
+                    Available 24/7
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[14px]">lock</span>
+                    Securely Encrypted
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[14px]">groups</span>
+                    For the people
+                </div>
+            </div>
+        </main>
+    </div>
+</Layout>
