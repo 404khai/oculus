@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #171717;
+  --color-background-light: #F9F9F9;
+  --color-background-dark: #0A0A0A;
+  --color-surface-light: #FFFFFF;
+  --color-surface-dark: #171717;
+
+  --font-display: "Inter", sans-serif;
+  --font-sans: "Inter", sans-serif;
+
+  --radius-DEFAULT: 0.75rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+/* Custom utilities matching demo.html */
+@layer utilities {
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .dark .glass-nav {
+    background: rgba(23, 23, 23, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .gradient-bg {
+    background: radial-gradient(circle at 50% -20%, #e5e7eb 0%, transparent 60%);
+  }
+
+  .dark .gradient-bg {
+    background: radial-gradient(circle at 50% -20%, #262626 0%, transparent 60%);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
