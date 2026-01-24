@@ -3,14 +3,23 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Oculus AI - Chat">
-    <div class="flex h-screen overflow-hidden bg-background-light dark:bg-background-dark">
+    <div class="flex h-full w-full overflow-hidden bg-background-light dark:bg-background-dark relative">
+        <!-- Mobile Sidebar Overlay -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-30 hidden md:hidden transition-opacity opacity-0 duration-300"></div>
+
         <!-- Sidebar -->
-        <aside class="w-[280px] flex-shrink-0 flex flex-col bg-surface-light dark:bg-[#121212] border-r border-neutral-200 dark:border-neutral-800">
+        <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-[280px] flex-col bg-surface-light dark:bg-[#121212] border-r border-neutral-200 dark:border-neutral-800 transform transition-transform duration-300 -translate-x-full md:relative md:translate-x-0 flex h-full shadow-2xl md:shadow-none">
             <!-- Header -->
             <div class="p-4">
-                <div class="flex items-center gap-3 px-2 mb-6">
-                    <img src="/logo.jpeg" alt="Oculus" class="w-8 h-8 rounded-lg">
-                    <span class="font-bold text-lg tracking-tight">Oculus</span>
+                <div class="flex items-center justify-between mb-6 px-2">
+                    <div class="flex items-center gap-3">
+                        <img src="/logo.jpeg" alt="Oculus" class="w-8 h-8 rounded-full">
+                        <span class="font-bold text-lg tracking-tight">Oculus</span>
+                    </div>
+                    <!-- Close Sidebar Button (Mobile Only) -->
+                    <button id="close-sidebar" class="md:hidden p-1 text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
                 </div>
 
                 <button class="w-full flex items-center justify-between px-3 py-2 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group">
@@ -99,8 +108,15 @@ import Layout from '../layouts/Layout.astro';
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 flex flex-col items-center justify-center relative">
-            <div class="w-full max-w-3xl px-6 flex flex-col items-center">
+        <main class="flex-1 flex flex-col h-full relative">
+            <!-- Mobile Header -->
+            <div class="md:hidden absolute top-0 left-0 right-0 p-4 flex items-center justify-between z-10 pointer-events-none">
+                <button id="open-sidebar" class="p-2 bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm pointer-events-auto transition-transform hover:scale-105 active:scale-95">
+                    <span class="material-symbols-outlined text-neutral-700 dark:text-neutral-300">menu</span>
+                </button>
+            </div>
+
+            <div class="flex-1 flex flex-col items-center justify-center w-full max-w-3xl px-4 md:px-6 mx-auto">
                 <!-- Center Logo/Icon -->
                 <div class="mb-8">
                     <div class="w-16 h-16 bg-black dark:bg-white rounded-2xl flex items-center justify-center shadow-xl">
@@ -109,10 +125,10 @@ import Layout from '../layouts/Layout.astro';
                 </div>
 
                 <!-- Heading -->
-                <h1 class="text-4xl font-bold text-neutral-900 dark:text-white mb-3 text-center">
+                <h1 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-3 text-center">
                     How can I help today?
                 </h1>
-                <p class="text-neutral-500 dark:text-neutral-400 mb-10 text-center">
+                <p class="text-neutral-500 dark:text-neutral-400 mb-10 text-center text-sm md:text-base px-4">
                     Try out new features: Deep Search, Think, Edit Image
                 </p>
 
@@ -148,7 +164,7 @@ import Layout from '../layouts/Layout.astro';
                 </div>
 
                 <!-- Feature Pills -->
-                <div class="flex flex-wrap justify-center gap-3 mt-6">
+                <div class="flex flex-wrap justify-center gap-2 md:gap-3 mt-6">
                     <button class="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
                         <span class="material-symbols-outlined text-[18px] text-green-500">center_focus_weak</span>
                         Deep Search
@@ -165,7 +181,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <!-- Bottom Footer Info -->
-            <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-6 text-xs text-neutral-400">
+            <div class="absolute bottom-6 left-0 right-0 flex flex-wrap justify-center gap-4 md:gap-6 text-xs text-neutral-400 px-4">
                 <div class="flex items-center gap-1.5">
                     <span class="material-symbols-outlined text-[14px]">schedule</span>
                     Available 24/7
@@ -182,3 +198,28 @@ import Layout from '../layouts/Layout.astro';
         </main>
     </div>
 </Layout>
+
+<script>
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const openBtn = document.getElementById('open-sidebar');
+    const closeBtn = document.getElementById('close-sidebar');
+
+    function toggleSidebar() {
+        if (sidebar?.classList.contains('-translate-x-full')) {
+            // Open
+            sidebar.classList.remove('-translate-x-full');
+            overlay?.classList.remove('hidden');
+            setTimeout(() => overlay?.classList.remove('opacity-0'), 10); // Fade in
+        } else {
+            // Close
+            sidebar?.classList.add('-translate-x-full');
+            overlay?.classList.add('opacity-0');
+            setTimeout(() => overlay?.classList.add('hidden'), 300); // Wait for fade out
+        }
+    }
+
+    openBtn?.addEventListener('click', toggleSidebar);
+    closeBtn?.addEventListener('click', toggleSidebar);
+    overlay?.addEventListener('click', toggleSidebar);
+</script>
