@@ -1,5 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { 
+    Paperclip, 
+    Sliders, 
+    SendFill, 
+    Search, 
+    Lightbulb, 
+    PencilSquare, 
+    Clock, 
+    ShieldLock, 
+    People, 
+    Moon, 
+    Sun 
+} from 'react-bootstrap-icons';
 ---
 
 <Layout title="Atlas - The agentic game developer">
@@ -67,14 +80,14 @@ import Layout from '../layouts/Layout.astro';
                         <!-- Bottom Actions -->
                         <div class="mt-auto flex items-center justify-between">
                             <button class="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors text-neutral-400">
-                                <span class="material-symbols-outlined">attach_file</span>
+                                <Paperclip />
                             </button>
                             <div class="flex items-center gap-2">
                                 <button class="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors text-neutral-400">
-                                    <span class="material-symbols-outlined">tune</span>
+                                    <Sliders />
                                 </button>
                                 <button class="bg-[#c2195f] text-white p-2 rounded-xl hover:opacity-90 transition-opacity">
-                                    <span class="material-symbols-outlined">send</span>
+                                    <SendFill />
                                 </button>
                             </div>
                         </div>
@@ -84,15 +97,15 @@ import Layout from '../layouts/Layout.astro';
                 <!-- Feature Pills -->
                 <div class="flex flex-wrap justify-center gap-3 mt-8">
                     <div class="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm text-neutral-600 dark:text-neutral-400 cursor-default hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
-                        <span class="material-symbols-outlined text-[18px] text-green-500">center_focus_weak</span>
+                        <Search className="text-[18px] text-green-500" />
                         Deep Search
                     </div>
                     <div class="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm text-neutral-600 dark:text-neutral-400 cursor-default hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
-                        <span class="material-symbols-outlined text-[18px] text-blue-500">lightbulb</span>
+                        <Lightbulb className="text-[18px] text-blue-500" />
                         Think
                     </div>
                     <div class="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm text-neutral-600 dark:text-neutral-400 cursor-default hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
-                        <span class="material-symbols-outlined text-[18px] text-orange-500">edit_square</span>
+                        <PencilSquare className="text-[18px] text-orange-500" />
                         Edit Image
                     </div>
                 </div>
@@ -103,17 +116,17 @@ import Layout from '../layouts/Layout.astro';
         <footer class="mt-32 border-t border-neutral-200 dark:border-neutral-800 pt-10">
             <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-8 text-neutral-400 text-sm font-medium">
                 <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-[18px]">schedule</span>
+                    <Clock className="text-[18px]" />
                     Available 24/7
                 </div>
                 <div class="w-1.5 h-1.5 rounded-full bg-neutral-300 dark:bg-neutral-700 hidden md:block"></div>
                 <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-[18px]">lock</span>
+                    <ShieldLock className="text-[18px]" />
                     Securely Encrypted
                 </div>
                 <div class="w-1.5 h-1.5 rounded-full bg-neutral-300 dark:bg-neutral-700 hidden md:block"></div>
                 <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-[18px]">groups</span>
+                    <People className="text-[18px]" />
                     For the people
                 </div>
             </div>
@@ -126,8 +139,8 @@ import Layout from '../layouts/Layout.astro';
 
     <!-- Dark Mode Toggle -->
     <button id="theme-toggle" class="fixed bottom-8 right-8 p-3 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-full shadow-lg hover:scale-110 transition-transform cursor-pointer">
-        <span class="material-symbols-outlined block dark:hidden">dark_mode</span>
-        <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+        <Moon className="block dark:hidden w-6 h-6" />
+        <Sun className="hidden dark:block w-6 h-6" />
     </button>
 </Layout>
 

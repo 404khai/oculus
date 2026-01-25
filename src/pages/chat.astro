@@ -1,5 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { 
+    X, 
+    Plus, 
+    ChevronRight, 
+    GearFill, 
+    Headset, 
+    List, 
+    Paperclip, 
+    Sliders, 
+    SendFill, 
+    Clock, 
+    ShieldLock, 
+    People,
+    PatchCheckFill
+} from 'react-bootstrap-icons';
 ---
 
 <Layout title="atlas AI - Chat">
@@ -18,16 +33,16 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                     <!-- Close Sidebar Button (Mobile Only) -->
                     <button id="close-sidebar" class="md:hidden p-1 text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors">
-                        <span class="material-symbols-outlined">close</span>
+                        <X className="w-6 h-6" />
                     </button>
                 </div>
 
                 <button class="w-full flex items-center justify-between px-3 py-2 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors group">
                     <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[20px] text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white">add</span>
+                        <Plus className="text-[20px] text-neutral-500 group-hover:text-neutral-900 dark:group-hover:text-white" />
                         <span class="text-sm font-medium">New Chat</span>
                     </div>
-                    <span class="material-symbols-outlined text-[16px] text-neutral-400">chevron_right</span>
+                    <ChevronRight className="text-[16px] text-neutral-400" />
                 </button>
             </div>
 
@@ -84,11 +99,11 @@ import Layout from '../layouts/Layout.astro';
             <!-- Footer -->
             <div class="p-4 space-y-1">
                 <button class="w-full flex items-center gap-3 px-2 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors">
-                    <span class="material-symbols-outlined text-[20px]">settings</span>
+                    <GearFill className="text-[20px]" />
                     Settings
                 </button>
                 <button class="w-full flex items-center gap-3 px-2 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors">
-                    <span class="material-symbols-outlined text-[20px]">headset_mic</span>
+                    <Headset className="text-[20px]" />
                     Support
                 </button>
                 
@@ -97,11 +112,11 @@ import Layout from '../layouts/Layout.astro';
                         <div class="flex items-center gap-3">
                             <img src="/kathy.jpeg" alt="User" class="w-8 h-8 rounded-full object-cover">
                             <div class="text-left">
-                                <div class="text-sm font-medium text-neutral-900 dark:text-white">Katherine Moon <span class="text-blue-500 inline-block align-middle text-[12px] material-symbols-outlined" style="font-size: 14px;">verified</span></div>
+                                <div class="text-sm font-medium text-neutral-900 dark:text-white">Katherine Moon <PatchCheckFill className="text-blue-500 inline-block align-middle" size={14} /></div>
                                 <div class="text-xs text-neutral-500 truncate max-w-[120px]">kathymoon@grvt8.com</div>
                             </div>
                         </div>
-                        <span class="material-symbols-outlined text-[16px] text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300">chevron_right</span>
+                        <ChevronRight className="text-[16px] text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300" />
                     </button>
                 </div>
             </div>
@@ -112,7 +127,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- Mobile Header -->
             <div class="md:hidden absolute top-0 left-0 right-0 p-4 flex items-center justify-between z-10 pointer-events-none">
                 <button id="open-sidebar" class="p-2 bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm pointer-events-auto transition-transform hover:scale-105 active:scale-95">
-                    <span class="material-symbols-outlined text-neutral-700 dark:text-neutral-300">menu</span>
+                    <List className="text-neutral-700 dark:text-neutral-300" />
                 </button>
             </div>
 
@@ -129,7 +144,7 @@ import Layout from '../layouts/Layout.astro';
                     How can I help today?
                 </h1>
                 <p class="text-neutral-500 dark:text-neutral-400 mb-10 text-center text-sm md:text-base px-4">
-                    Try out the new agent, Simulant, for Player behavior simulations
+                    Try out the new agent, Simulator, for Player behavior simulations
                 </p>
 
                 <!-- Input Box -->
@@ -138,25 +153,25 @@ import Layout from '../layouts/Layout.astro';
                         <!-- Model Selector -->
                         <div class="flex items-center gap-2 mb-2">
                             <div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors">
-                                <img src="/model.jpeg" alt="v3" class="w-5 h-5 rounded-md">
-                                <span class="text-xs font-semibold text-neutral-600 dark:text-neutral-400">v3</span>
+                                <img src="/simulator.png" alt="v3" class="w-5 h-5 rounded-md">
+                                <span class="text-xs font-semibold text-neutral-600 dark:text-neutral-400">Simulator</span>
                             </div>
                         </div>
 
                         <!-- Textarea -->
-                        <textarea class="w-full bg-transparent border-none focus:ring-0 text-lg resize-none placeholder-neutral-400 dark:placeholder-neutral-600 cursor-text outline-none" placeholder="Ask anything..."></textarea>
+                        <textarea class="w-full bg-transparent border-none focus:ring-0 text-sm resize-none placeholder-neutral-400 dark:placeholder-neutral-600 cursor-text outline-none" placeholder="Run 10 simulations of possible player progression.."></textarea>
                         
                         <!-- Bottom Actions -->
                         <div class="mt-auto flex items-center justify-between pt-2">
                             <button class="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300">
-                                <span class="material-symbols-outlined">attach_file</span>
+                                <Paperclip />
                             </button>
                             <div class="flex items-center gap-2">
                                 <button class="p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300">
-                                    <span class="material-symbols-outlined">tune</span>
+                                    <Sliders />
                                 </button>
                                 <button class="bg-black dark:bg-white text-white dark:text-black p-2 rounded-xl hover:opacity-90 transition-opacity">
-                                    <span class="material-symbols-outlined text-[20px]">send</span>
+                                    <SendFill className="text-[20px]" />
                                 </button>
                             </div>
                         </div>
@@ -165,34 +180,18 @@ import Layout from '../layouts/Layout.astro';
 
                 <!-- Feature Pills -->
                 <div class="flex flex-wrap justify-center gap-2 md:gap-3 mt-6">
-                    <button class="flex items-center gap-2 px-4 py-2 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors shadow-sm">
-                        <img src="/logo.png" alt="Architect" class="w-5 h-5 object-contain opacity-80">
+                    <button class="flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors shadow-sm">
+                        <img src="/architect.png" alt="Architect" class="w-5 h-5 object-contain opacity-80">
                         Architect
                     </button>
-                    <button class="flex items-center gap-2 px-4 py-2 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors shadow-sm">
-                        <img src="/logo.png" alt="Tactician" class="w-5 h-5 object-contain opacity-80">
+                    <button class="flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors shadow-sm">
+                        <img src="/tactician.png" alt="Tactician" class="w-5 h-5 object-contain opacity-80">
                         Tactician
                     </button>
-                    <button class="flex items-center gap-2 px-4 py-2 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors shadow-sm">
-                        <img src="/logo.png" alt="Simulant" class="w-5 h-5 object-contain opacity-80">
-                        Simulant
+                    <button class="flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors shadow-sm">
+                        <img src="/simulator.png" alt="Simulator" class="w-5 h-5 object-contain opacity-80">
+                        Simulator
                     </button>
-                </div>
-            </div>
-
-            <!-- Bottom Footer Info -->
-            <div class="absolute bottom-6 left-0 right-0 flex flex-wrap justify-center gap-4 md:gap-6 text-xs text-neutral-400 px-4">
-                <div class="flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-[14px]">schedule</span>
-                    Available 24/7
-                </div>
-                <div class="flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-[14px]">lock</span>
-                    Securely Encrypted
-                </div>
-                <div class="flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-[14px]">groups</span>
-                    For the people
                 </div>
             </div>
         </main>
