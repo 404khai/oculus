@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
 @variant dark (&:where(.dark, .dark *));
-
+.good{
+  color: #191919;
+}
 @theme {
-  --color-primary: #171717;
+  --color-primary: #c2195f;
   --color-background-light: #F9F9F9;
-  --color-background-dark: #0F0518;
+  --color-background-dark: #1C1C1C;
   --color-surface-light: #FFFFFF;
   --color-surface-dark: #1A0B2E;
 
@@ -35,7 +37,7 @@
   }
 
   .dark .gradient-bg {
-    background: radial-gradient(circle at 50% -20%, #262626 0%, transparent 60%);
+    background: radial-gradient(circle at 50% -20%, #404040 0%, transparent 60%);
   }
 
   .animate-float {
