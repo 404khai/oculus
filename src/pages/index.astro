@@ -2,8 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import {
   Grid3x3,
-  Moon,
-  Sun,
   Sliders,
   Paperclip,
   SendFill,
@@ -25,24 +23,22 @@ import {
 
 <Layout title="Atlas AI | Your personal agentic 2D game developer" showToggle={false}>
   <!-- Header -->
-  <header class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between relative z-50">
-    <div class="flex items-center gap-3 bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md px-5 py-2.5 rounded-full border border-neutral-200/50 dark:border-neutral-700/50 shadow-sm">
-        <img src="/logo.png" alt="atlas" class="w-8 h-8">
-        <span class="font-bold tracking-tight text-lg">Atlas</span>
-    </div>
-    <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-500 dark:text-slate-400">
-      <a class="hover:text-primary transition-colors" href="#">Features</a>
-      <a class="hover:text-primary transition-colors" href="#">Pricing</a>
-      <a class="hover:text-primary transition-colors" href="#">About</a>
-      <a class="hover:text-primary transition-colors" href="#">API</a>
-    </nav>
-    <div class="flex items-center space-x-4">
-      <button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full cursor-pointer" onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';">
-        <span class="block dark:hidden"><Moon size={20} /></span>
-        <span class="hidden dark:block"><Sun size={20} /></span>
-      </button>
-      <a class="text-sm font-semibold px-4" href="#">Log in</a>
-      <a class="bg-primary text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all shadow-md" href="#">Get Started</a>
+  <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 transition-all">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3 bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md px-5 py-2.5 rounded-full border border-neutral-200/50 dark:border-neutral-700/50 shadow-sm">
+          <img src="/logo.png" alt="atlas" class="w-8 h-8">
+          <span class="font-bold tracking-tight text-lg">Atlas</span>
+      </div>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-500 dark:text-slate-400">
+        <a class="hover:text-primary transition-colors" href="#">Features</a>
+        <a class="hover:text-primary transition-colors" href="#">Pricing</a>
+        <a class="hover:text-primary transition-colors" href="#">About</a>
+        <a class="hover:text-primary transition-colors" href="#">API</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <a class="text-sm font-semibold px-4" href="#">Log in</a>
+        <a class="bg-primary text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all shadow-md" href="#">Get Started</a>
+      </div>
     </div>
   </header>
 
@@ -81,7 +77,7 @@ import {
             <span class="text-xs font-mono font-medium">v3.4.2-stable</span>
           </div>
         </div>
-        <div class="min-h-[100px] flex items-center">
+        <div class="min-h-[40px] flex items-center">
           <p class="text-2xl text-slate-400 dark:text-slate-600 font-light">Create a 2D action platformer for mobile...</p>
         </div>
         <div class="flex items-center justify-between mt-6 pt-6 border-t border-slate-50 dark:border-slate-800">
