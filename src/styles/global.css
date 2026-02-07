@@ -5,16 +5,20 @@
   color: #191919;
 }
 @theme {
-  --color-primary: #c2195f;
-  --color-background-light: #F9F9F9;
-  --color-background-dark: #1C1C1C;
+  --color-primary: #D11E5E;
+  --color-background-light: #F9FAFB;
+  --color-background-dark: #0F172A;
   --color-surface-light: #FFFFFF;
   --color-surface-dark: #1A0B2E;
 
   --font-display: "Inter", sans-serif;
   --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-dmMono: "DM Mono", monospace;
+  --font-newsreader: "Newsreader", serif;
+  --font-hand: "Caveat", cursive;
 
-  --radius-DEFAULT: 0.75rem;
+  --radius-DEFAULT: 0.25rem;
   --radius-xl: 1.5rem;
   --radius-2xl: 2rem;
 }
@@ -42,6 +46,34 @@
 
   .animate-float {
     animation: float 6s ease-in-out infinite;
+  }
+
+  .venture-border {
+    border: 1px solid rgba(0,0,0,0.1);
+    position: relative;
+  }
+  .dark .venture-border {
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .corner-accent::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+  }
+  .corner-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 8px;
+    height: 8px;
+    border-bottom: 1px solid currentColor;
+    border-right: 1px solid currentColor;
   }
 }
 

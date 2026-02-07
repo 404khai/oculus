@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atlas AI | Your personal agentic 2D game developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Caveat:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D11E5E",
+                        "background-light": "#F9FAFB",
+                        "background-dark": "#0F172A",
+                        border: "#E2E8F0",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"],
+                        hand: ["Caveat", "cursive"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+<style>
+        .venture-border {
+            border: 1px solid rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .dark .venture-border {
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .corner-accent::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 8px;
+            height: 8px;
+            border-top: 1px solid currentColor;
+            border-left: 1px solid currentColor;
+        }
+        .corner-accent::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 8px;
+            height: 8px;
+            border-bottom: 1px solid currentColor;
+            border-right: 1px solid currentColor;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<header class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
+<div class="flex items-center space-x-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-full shadow-sm">
+<div class="w-8 h-8 bg-black dark:bg-white rounded-lg flex items-center justify-center text-white dark:text-black">
+<span class="material-icons-outlined text-sm">grid_view</span>
+</div>
+<span class="font-bold text-lg tracking-tight">Atlas</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Features</a>
+<a class="hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="hover:text-primary transition-colors" href="#">About</a>
+<a class="hover:text-primary transition-colors" href="#">API</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full" onclick="toggleDarkMode()">
+<span class="material-icons-outlined">dark_mode</span>
+</button>
+<a class="text-sm font-semibold px-4" href="#">Log in</a>
+<a class="bg-primary text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all shadow-md" href="#">Get Started</a>
+</div>
+</header>
+<section class="max-w-4xl mx-auto px-6 pt-16 pb-24 text-center">
+<div class="inline-flex items-center space-x-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-xs font-medium mb-8 border border-blue-100 dark:border-blue-800">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+</span>
+<span>Introducing Simulator, the new player behavior simulation agent</span>
+</div>
+<h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
+            Your personal agentic <br/> 2D game developer.
+        </h1>
+<p class="text-lg text-slate-500 dark:text-slate-400 mb-12 max-w-xl mx-auto font-light">
+            Bring game mechanics, quests and systems to life with the first AI agent designed for full-cycle production.
+        </p>
+<div class="max-w-3xl mx-auto venture-border corner-accent bg-white dark:bg-slate-900 p-1 shadow-2xl rounded-sm">
+<div class="border border-slate-100 dark:border-slate-800 p-6 text-left">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center space-x-2 px-3 py-1.5 bg-slate-50 dark:bg-slate-800 rounded border border-slate-200 dark:border-slate-700">
+<span class="material-icons-outlined text-sm">settings_input_component</span>
+<span class="text-xs font-mono font-medium">v3.4.2-stable</span>
+</div>
+</div>
+<div class="min-h-[100px] flex items-center">
+<p class="text-2xl text-slate-400 dark:text-slate-600 font-light">Create a 2D action platformer for mobile...</p>
+</div>
+<div class="flex items-center justify-between mt-6 pt-6 border-t border-slate-50 dark:border-slate-800">
+<div class="flex space-x-4">
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"><span class="material-icons-outlined">attach_file</span></button>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"><span class="material-icons-outlined">tune</span></button>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center">
+<span class="material-icons-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="border-y border-slate-100 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 py-10">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-wrap justify-center md:justify-between items-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all">
+<span class="font-bold text-xl">SEDGWICK</span>
+<span class="font-bold text-xl">REDDIT</span>
+<span class="font-bold text-xl">CALENDLY</span>
+<span class="font-bold text-xl">OMI</span>
+<span class="font-bold text-xl">HUCKBERRY</span>
+</div>
+</div>
+</div>
+<section class="max-w-7xl mx-auto px-6 py-32 grid md:grid-cols-2 gap-16 items-center">
+<div>
+<div class="relative inline-block mb-4">
+<h2 class="text-4xl font-bold mb-6">Why Atlas exists</h2>
+<div class="absolute -right-40 top-0 hidden lg:block">
+<p class="font-hand text-xl text-slate-400 leading-none">Because you<br/>probably asked...<br/>so uh...</p>
+<svg class="w-16 h-16 text-slate-300 transform rotate-12 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 10h10a8 8 0 018 8v2M3 10l4-4m-4 4l4 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+</svg>
+</div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 mb-8 max-w-md leading-relaxed">
+                The next decade of creative value will be created by developers who understand how to build infrastructure for intelligence—not just software.
+            </p>
+<p class="text-slate-500 dark:text-slate-400 mb-10 max-w-md leading-relaxed">
+                We operate at the intersection of data systems, automation, and generative intelligence, building engines that are designed to scale with the complexity of modern interactive media.
+            </p>
+<button class="venture-border corner-accent px-6 py-3 text-sm font-semibold flex items-center space-x-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span>Explore the docs</span>
+<span class="material-icons-outlined text-sm">north_east</span>
+</button>
+</div>
+<div class="space-y-4">
+<div class="venture-border corner-accent bg-white dark:bg-slate-800 p-6">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-mono uppercase tracking-widest text-slate-400">Layer 01: Engine</span>
+<span class="material-icons-outlined text-slate-300 text-sm">more_horiz</span>
+</div>
+<div class="flex items-center space-x-3 text-sm font-medium">
+<span class="material-icons-outlined text-slate-400">layers</span>
+<span>Physics &amp; Core Rendering</span>
+</div>
+<p class="text-xs text-slate-400 mt-1 ml-8">Collision, particles, shading systems</p>
+</div>
+<div class="flex justify-center text-slate-300">
+<span class="material-icons-outlined">expand_more</span>
+</div>
+<div class="venture-border corner-accent bg-white dark:bg-slate-800 p-6">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-mono uppercase tracking-widest text-slate-400">Layer 02: Logic</span>
+<span class="material-icons-outlined text-slate-300 text-sm">more_horiz</span>
+</div>
+<div class="flex items-center space-x-3 text-sm font-medium">
+<span class="material-icons-outlined text-slate-400">psychology</span>
+<span>Agentic Behavior Engine</span>
+</div>
+<p class="text-xs text-slate-400 mt-1 ml-8">NPC logic, quest branching, narrative trees</p>
+</div>
+<div class="flex justify-center text-slate-300">
+<span class="material-icons-outlined">expand_more</span>
+</div>
+<div class="venture-border corner-accent bg-white dark:bg-slate-800 p-6">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-mono uppercase tracking-widest text-slate-400">Layer 03: Assets</span>
+<span class="material-icons-outlined text-slate-300 text-sm">more_horiz</span>
+</div>
+<div class="flex items-center space-x-3 text-sm font-medium">
+<span class="material-icons-outlined text-slate-400">palette</span>
+<span>Dynamic Sprite Generation</span>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between text-[10px] font-mono uppercase text-primary">
+<span>Latency: 42ms</span>
+<span>99.9% Precision</span>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-slate-50 dark:bg-slate-900/40 py-32">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16">
+<div class="relative inline-block">
+<h2 class="text-5xl font-bold leading-tight">Built to scale <br/> with precision</h2>
+<div class="absolute -right-48 top-4 hidden lg:block">
+<svg class="w-12 h-12 text-slate-400 transform -rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+</svg>
+<p class="font-hand text-lg text-slate-500 mt-2">We've got some<br/>records you'd<br/>really wanna<br/>know.</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="venture-border corner-accent bg-white dark:bg-slate-800 p-8 group">
+<div class="flex items-center space-x-2 text-slate-400 mb-6">
+<span class="material-icons-outlined text-sm">trending_up</span>
+<span class="text-[10px] font-mono uppercase tracking-widest">Efficiency Multiplier</span>
+</div>
+<div class="flex items-baseline space-x-1">
+<span class="text-6xl font-bold">10x</span>
+</div>
+<p class="text-xs text-slate-400 mt-4 group-hover:text-primary transition-colors">vs. industry avg. of 1.2x</p>
+</div>
+<div class="venture-border corner-accent bg-white dark:bg-slate-800 p-8 group">
+<div class="flex items-center space-x-2 text-slate-400 mb-6">
+<span class="material-icons-outlined text-sm">groups</span>
+<span class="text-[10px] font-mono uppercase tracking-widest">Global Reach</span>
+</div>
+<div class="flex items-baseline space-x-1">
+<span class="text-6xl font-bold">4.2M</span>
+</div>
+<p class="text-xs text-slate-400 mt-4 group-hover:text-primary transition-colors">Daily simulated entities</p>
+</div>
+<div class="venture-border corner-accent bg-white dark:bg-slate-800 p-8 group">
+<div class="flex items-center space-x-2 text-slate-400 mb-6">
+<span class="material-icons-outlined text-sm">bolt</span>
+<span class="text-[10px] font-mono uppercase tracking-widest">Output Velocity</span>
+</div>
+<div class="flex items-baseline space-x-1">
+<span class="text-6xl font-bold">3.4x</span>
+</div>
+<p class="text-xs text-slate-400 mt-4 group-hover:text-primary transition-colors">More output with less cost</p>
+</div>
+<div class="venture-border corner-accent bg-white dark:bg-slate-800 p-8 group">
+<div class="flex items-center space-x-2 text-slate-400 mb-6">
+<span class="material-icons-outlined text-sm">attach_money</span>
+<span class="text-[10px] font-mono uppercase tracking-widest">ROI increase</span>
+</div>
+<div class="flex items-baseline space-x-1">
+<span class="text-6xl font-bold">470%</span>
+</div>
+<p class="text-xs text-slate-400 mt-4 group-hover:text-primary transition-colors">Measured over 18-month period</p>
+</div>
+<div class="venture-border corner-accent bg-white dark:bg-slate-800 p-8 group">
+<div class="flex items-center space-x-2 text-slate-400 mb-6">
+<span class="material-icons-outlined text-sm">settings_input_composite</span>
+<span class="text-[10px] font-mono uppercase tracking-widest">Integration Level</span>
+</div>
+<div class="flex items-baseline space-x-1">
+<span class="text-6xl font-bold">10%</span>
+</div>
+<p class="text-xs text-slate-400 mt-4 group-hover:text-primary transition-colors">Best-in-class deployment speed</p>
+</div>
+<div class="venture-border corner-accent bg-white dark:bg-slate-800 p-8 group">
+<div class="flex items-center space-x-2 text-slate-400 mb-6">
+<span class="material-icons-outlined text-sm">verified_user</span>
+<span class="text-[10px] font-mono uppercase tracking-widest">Uptime Guarantee</span>
+</div>
+<div class="flex items-baseline space-x-1">
+<span class="text-6xl font-bold">99.9%</span>
+</div>
+<p class="text-xs text-slate-400 mt-4 group-hover:text-primary transition-colors">Across all production workloads</p>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-6 py-32">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="venture-border corner-accent bg-white dark:bg-slate-900 p-10">
+<span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">Production Layer</span>
+<h3 class="text-xl font-bold mt-4 mb-6 leading-snug">Automated Quest Logic &amp; Branching</h3>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start space-x-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-icons-outlined text-primary text-lg">check_circle</span>
+<span>Real-time narrative flow generation</span>
+</li>
+<li class="flex items-start space-x-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-icons-outlined text-primary text-lg">check_circle</span>
+<span>Automated state-machine testing</span>
+</li>
+<li class="flex items-start space-x-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-icons-outlined text-primary text-lg">check_circle</span>
+<span>Dynamic NPC dialogue synthesis</span>
+</li>
+</ul>
+<div class="bg-slate-50 dark:bg-slate-800 p-4 font-mono text-[10px] text-slate-500 border border-slate-100 dark:border-slate-700">
+<div class="flex justify-between mb-2">
+<span>$ atlas.quest_gen()</span>
+<span class="material-icons-outlined text-[10px]">more_horiz</span>
+</div>
+<div class="text-green-500">✓ 2,400 paths generated</div>
+</div>
+</div>
+<div class="venture-border corner-accent bg-white dark:bg-slate-900 p-10">
+<span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">Intelligence Layer</span>
+<h3 class="text-xl font-bold mt-4 mb-6 leading-snug">Dynamic Asset Scaling &amp; Generation</h3>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start space-x-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-icons-outlined text-primary text-lg">check_circle</span>
+<span>On-demand vector sprite creation</span>
+</li>
+<li class="flex items-start space-x-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-icons-outlined text-primary text-lg">check_circle</span>
+<span>Automatic resolution optimization</span>
+</li>
+<li class="flex items-start space-x-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-icons-outlined text-primary text-lg">check_circle</span>
+<span>Multi-style consistency engine</span>
+</li>
+</ul>
+<div class="bg-slate-50 dark:bg-slate-800 p-4 font-mono text-[10px] text-slate-500 border border-slate-100 dark:border-slate-700">
+<div class="flex justify-between mb-2">
+<span>$ atlas.asset_render()</span>
+<span class="material-icons-outlined text-[10px]">more_horiz</span>
+</div>
+<div class="text-blue-500">✓ 152 assets optimized</div>
+</div>
+</div>
+<div class="venture-border corner-accent bg-white dark:bg-slate-900 p-10">
+<span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">Infrastructure Layer</span>
+<h3 class="text-xl font-bold mt-4 mb-6 leading-snug">Multi-platform Logic Synchronization</h3>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start space-x-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-icons-outlined text-primary text-lg">check_circle</span>
+<span>Unified C# &amp; Swift bridging</span>
+</li>
+<li class="flex items-start space-x-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-icons-outlined text-primary text-lg">check_circle</span>
+<span>Server-side authority modeling</span>
+</li>
+<li class="flex items-start space-x-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-icons-outlined text-primary text-lg">check_circle</span>
+<span>Low-latency state replication</span>
+</li>
+</ul>
+<div class="bg-slate-50 dark:bg-slate-800 p-4 font-mono text-[10px] text-slate-500 border border-slate-100 dark:border-slate-700">
+<div class="flex justify-between mb-2">
+<span>$ atlas.sync_nodes()</span>
+<span class="material-icons-outlined text-[10px]">more_horiz</span>
+</div>
+<div class="text-purple-500">✓ 12 edge nodes active</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="border-t border-slate-100 dark:border-slate-800 pt-24 pb-12 bg-white dark:bg-slate-950">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<h2 class="text-4xl font-bold mb-6">Ready to build the future?</h2>
+<p class="text-slate-400 mb-12 max-w-lg mx-auto">Join 500+ game studios reimagining production workflows with Atlas.</p>
+<div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
+<a class="bg-primary text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-primary/20" href="#">Create Free Project</a>
+<a class="px-8 py-4 border border-slate-200 dark:border-slate-700 rounded-full font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">Book a Demo</a>
+</div>
+<div class="mt-32 pt-12 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 font-mono tracking-widest uppercase">
+<div class="mb-4 md:mb-0">© 2024 ATLAS TECHNOLOGIES INC.</div>
+<div class="flex space-x-8">
+<a class="hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="hover:text-primary transition-colors" href="#">Discord</a>
+<a class="hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="hover:text-primary transition-colors" href="#">Legal</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
